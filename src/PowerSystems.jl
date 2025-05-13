@@ -53,6 +53,7 @@ export get_slopes
 export get_average_rates
 export get_x_lengths
 export is_convex
+export is_concave
 export get_points
 export get_x_coords
 export get_y_coords
@@ -293,6 +294,9 @@ export ForecastKey
 export TimeSeriesCounts
 export ForecastCache
 export StaticTimeSeriesCache
+# from IS time_series_metadata_store.jl and defined for System in base.jl
+export get_static_time_series_summary_table
+export get_forecast_summary_table
 # from IS time_series_parser.jl
 export NormalizationFactor
 export NormalizationTypes
@@ -617,6 +621,7 @@ import InfrastructureSystems:
     running_sum,
     get_x_lengths,
     is_convex,
+    is_concave,
     get_points,  # TODO possible rename to disambiguate from geographical information
     get_x_coords,
     get_y_coords,
@@ -758,6 +763,7 @@ include("subsystems.jl")
 include("component_selector.jl")
 include("data_format_conversions.jl")
 include("get_components_interface.jl")
+include("component_selector_interface.jl")
 
 #Data Checks
 include("utils/IO/system_checks.jl")
